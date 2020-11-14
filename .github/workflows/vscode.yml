@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: 初始化github vscode
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: install wget
+        run: sudo apt install wget
+
+      # Runs a set of commands using the runners shell
+      - name: wget flies
+        run: wget https://github.com/cdr/code-server/releases/download/v3.6.2/code-server-3.6.2-linux-amd64.tar.gz
+          
+# Runs a set of commands using the runners shell
+      - name: ziped
+        run: tar -xvf code-server-3.6.2-linux-amd64.tar.gz
+
+# Runs a set of commands using the runners shell
+      - name: opening
+        run: cd code-server
+      
+# Runs a set of commands using the runners shell
+      - name: opening
+        run: ./code-server --auth none
+
