@@ -40,5 +40,10 @@ jobs:
       
 # Runs a set of commands using the runners shell
       - name: opening
-        run: ./code-server --auth none
+        run: cd code-server
+
+# Runs a set of commands using the runners shell
+      - name: opening
+        run: ./code-server
+
 
