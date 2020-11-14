@@ -36,9 +36,9 @@ jobs:
 
 # Runs a set of commands using the runners shell
       - name: opening
-        run: cd code-server
+        run: ls
       
 # Runs a set of commands using the runners shell
       - name: opening
-        run: ./code-server --auth none
+        run: ls
 
